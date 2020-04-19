@@ -1,7 +1,5 @@
 package problems
 
-import kotlin.system.measureTimeMillis
-
 /*
 Even Fibonacci numbers
 
@@ -14,22 +12,18 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
  */
 
-fun main() {
+private const val UPPER_BOUND = 4_000_000
 
-    val time = measureTimeMillis {
-        var sum = 0
-        var i = 0
-        while (true) {
-            val fib = fibonacci(i)
-            if (fib > 4_000_000) break
-            if (fib % 2 == 0) sum += fib
-            i++
-        }
-        println("Sum: $sum")
+fun problem2(): String {
+    var sum = 0
+    var i = 0
+    while (true) {
+        val fib = fibonacci(i)
+        if (fib > UPPER_BOUND) break
+        if (fib % 2 == 0) sum += fib
+        i++
     }
-
-    println("Calculated time: $time")
-
+    return "Sum: $sum"
 }
 
 /**

@@ -1,7 +1,6 @@
 package problems
 
 import kotlin.math.sqrt
-import kotlin.system.measureTimeMillis
 
 /*
 Largest prime factor
@@ -11,26 +10,19 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
  */
 
-//const val NUMBER = 13_195
-const val NUMBER = 600_851_475_143
+private const val UPPER_BOUND = 600_851_475_143
 
-fun main() {
-
-    val time = measureTimeMillis {
-        var largestPrime = 2
-        var num = NUMBER
-        do {
-            if (num % largestPrime == 0L) {
-                num /= largestPrime
-            } else {
-                largestPrime++
-            }
-        } while (num != 1L)
-        println("Largest prime is $largestPrime")
-    }
-
-    println("Calculated time: $time")
-
+fun problem3(): String {
+    var largestPrime = 2
+    var num = UPPER_BOUND
+    do {
+        if (num % largestPrime == 0L) {
+            num /= largestPrime
+        } else {
+            largestPrime++
+        }
+    } while (num != 1L)
+    return "Largest prime is $largestPrime"
 }
 
 /**
