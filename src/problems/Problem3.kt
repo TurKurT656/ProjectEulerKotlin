@@ -40,7 +40,7 @@ fun Long.isPrime(): Boolean {
 /**
  * Another Helper function to detect if a number is a prime one
  * Copied from Python solutions and converted to Kotlin
- * See [https://stackoverflow.com/a/15285588/4254527]
+ * @see <a href="https://stackoverflow.com/a/15285588/4254527">Stackoverflow answer</a>
  */
 fun Long.isPrime2(): Boolean {
     if (this == 2L || this == 3L) return true
